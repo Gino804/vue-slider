@@ -26,6 +26,14 @@ const app = Vue.createApp({
                 }
             ]
         }
+    },
+    methods: {
+        prevPicture() {
+            this.currentIndex--;
+        },
+        nextPicture() {
+            this.currentIndex++;
+        },
     }
 });
 
