@@ -5,24 +5,31 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Carosello</title>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
+
+    <!-- Fontawesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- CSS -->
     <link rel="stylesheet" href="css/style.css" />
+
+    <!-- Vue -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
   </head>
   <body>
-    <main>
-      <div class="container">
-        <i class="fa-solid fa-arrow-up" id="arrow-up"></i>
-        <div id="gallery"></div>
-        <i class="fa-solid fa-arrow-down" id="arrow-down"></i>
-        <div id="thumbnails"></div>
-      </div>
-    </main>
+    <div id="root">
+      <main>
+        <div class="container">
+          <i class="fa-solid fa-arrow-up" id="arrow-up"></i>
+          <div id="gallery">
+            <img v-for="(image, i) in images" v-show="i === currentIndex" :src="image.image" :alt="image.text" :title="image.title" />
+          </div>
+          <i class="fa-solid fa-arrow-down" id="arrow-down"></i>
+          <div id="thumbnails">
+            <img v-for="image in images" :src="image.image" :alt="image.text" />
+          </div>
+        </div>
+      </main>
+    </div>
     <script src="js/script.js"></script>
   </body>
 </html>
