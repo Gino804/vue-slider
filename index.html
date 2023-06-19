@@ -21,11 +21,11 @@
         <div class="container">
           <i class="fa-solid fa-arrow-up" id="arrow-up" @click="prevPicture" v-show="currentIndex"></i>
           <div id="gallery">
-            <img v-for="(image, i) in images" v-show="i === currentIndex" :src="image.image" :alt="image.text" :title="image.title" />
+            <img v-for="(image, i) in images" v-show="i === currentIndex" :src="image.image" :alt="image.text" :title="image.title" @mouseover="stopInterval" @mouseout="startInterval" />
           </div>
           <i class="fa-solid fa-arrow-down" id="arrow-down" @click="nextPicture" v-show="currentIndex < images.length - 1"></i>
           <div id="thumbnails">
-            <img v-for="image in images" :src="image.image" :alt="image.text" />
+            <img v-for="(image, i) in images" :src="image.image" :alt="image.text" @click="currentIndex = i" />
           </div>
         </div>
       </main>
