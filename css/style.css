@@ -1,0 +1,67 @@
+.container
+{
+    height:300px;
+    width:1000px;
+    margin:auto;
+    text-align:center;
+    position:relative;
+}
+
+#gallery
+{
+    height:100%;
+}
+
+img
+{
+    height:100%;
+    width:100%;
+    object-fit:cover;
+    display:none;
+}
+
+#thumbnails
+{
+    position:absolute;
+    top:32px;
+    bottom:-32px;
+    right:0;
+    width:150px;
+}
+
+#thumbnails>img
+{
+    display:block;
+    height:20%;
+    filter:brightness(40%);
+}
+
+.fa-solid
+{
+    position:relative;
+    left:425px;
+    z-index:1;
+    color:white;
+    font-size:2rem;
+    cursor:pointer;
+}
+
+.fa-arrow-up
+{
+    top:2rem;
+}
+
+.fa-arrow-down
+{
+    bottom:2rem;
+}
+
+.d-block
+{
+    display:block;
+}
+
+#thumbnails>.img-active
+{
+    filter:brightness(100%);
+}
